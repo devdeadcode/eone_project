@@ -13,5 +13,17 @@ namespace BlogCommentSubmissionSystem.Controllers
         {
             return View();
         }
+
+        //GET: Submission
+        public ActionResult Submission()
+        {
+            return View();
+        }
+
+        //Get: ViewPosts
+        public ActionResult ViewPost()
+        {
+            return View();
+        }
     }
 }
