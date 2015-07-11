@@ -5,3 +5,21 @@
 
 <h2>Submission</h2>
 
+<form method="post" action="@Url.Action("Authentication", "Home")">
+    @{
+        if (ViewBag.ErrorMessage != null)
+        {
+            @ViewBag.ErrorMessage;
+        }
+    }
+
+    <p>Email Address:</p>
+    <p><input name="email" type="text" /></p>
+    <p>Title:</p>
+    <p><input name="title" type="text" /></p>
+
+    <p>Description:</p>
+    <p><textarea name="desc" rows="2" cols="22"></textarea></p>
+    <p><input id="submit" type="submit" value="submit" /></p>
+
+</form>
