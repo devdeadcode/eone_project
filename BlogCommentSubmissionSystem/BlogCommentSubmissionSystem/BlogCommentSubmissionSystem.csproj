@@ -120,7 +120,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Styles\ButtonStyle.css.txt" />
+    <Content Include="Styles\ButtonStyle.css" />
+    <Content Include="Styles\TableStyle.css" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Submission.cshtml" />

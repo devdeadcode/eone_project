@@ -12,13 +12,13 @@ namespace BlogCommentSubmissionSystem.Controllers
         BlogCommentSubmissionSystem.Session session = BlogCommentSubmissionSystem.Session.Instance; 
         //returns the object that was already initialized in the Session class
 
-        // GET: Home
+        // GET: Home/Starting page
         public ActionResult Index()
         {
             return View();
         }
 
-        //GET: Submission
+        //GET: Submission and submits valid data
         public ActionResult Submission()
         {
             var postObj = new PostTable();
@@ -26,12 +26,13 @@ namespace BlogCommentSubmissionSystem.Controllers
             if (session.Message != null)
             {
                 ViewBag.ErrorMessage = session.Message;
+                ViewBag.ErrorCode = session.MessageCode;
             }
 
             return View();
         }
 
-        //Get: ViewPosts
+        //Get: ViewPosts and allows to view all the posts in a table
         public ActionResult ViewPost()
         {
             var result = (from post in db.PostTables
@@ -63,14 +64,14 @@ namespace BlogCommentSubmissionSystem.Controllers
             }
             else
             {
-                session.Message = "Sorry, no authorization!";
+                session.Message = "Sorry, invalid user e-mail!";
                 session.MessageCode = 0;
             }
 
             return RedirectToAction("Submission", "Home");
         }
 
-        //Get: Details
+        //Get: Details Controller and shows information 
         public ActionResult Details(int Id)
         {
             var result = (from post in db.PostTables

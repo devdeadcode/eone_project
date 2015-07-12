@@ -1,39 +1,32 @@
-﻿<style>
-    table, td, th {
-        border: 1px solid black;
-    }
-
-    th {
-        background-color: grey;
-        color: white;
-    }
-</style>
+﻿
 @{
     ViewBag.Title = "ViewPost";
 }
 
-<h2>ViewPost</h2>
+<h3 style="font-family:'Copperplate Gothic'">All the posts</h3>
 
-<table>
-    <tr>
-        <th> ID </th>
-        <th> Email </th>
-        <th> Title </th>
-        <th> Posted Date </th>
-    </tr>
-    @{
-        foreach (PostTable post in ViewBag.Posts)
-        {
-            
-            <tr>
-                <td>@post.PostId</td>
-                <td>@post.UserTable.EmailAddress</td>
-                <td><a href="@Url.Action("Details", "Home")/@post.PostId">@post.Title</td>
-                <td>@post.PostedDate</td>
-            </tr>
+<div class="viewTable">
+    <table>
+        <tr>
+            <td> ID </td>
+            <td> Email </td>
+            <td> Title </td>
+            <td> Posted Date </td>
+        </tr>
+        @{
+            foreach (PostTable post in ViewBag.Posts)
+            {
+
+                <tr>
+                    <td>@post.PostId</td>
+                    <td>@post.UserTable.EmailAddress</td>
+                    <td><a href="@Url.Action("Details", "Home")/@post.PostId">@post.Title</td>
+                    <td>@post.PostedDate</td>
+                </tr>
+            }
         }
-    }
-</table>
+    </table>
+</div>
 
 @Html.ActionLink("Back to Main menu", "Index")
 
