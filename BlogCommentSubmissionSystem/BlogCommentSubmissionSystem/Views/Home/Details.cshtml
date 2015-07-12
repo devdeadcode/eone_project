@@ -1,0 +1,28 @@
+﻿<style>
+    .title{
+        font-family:'Copperplate Gothic';
+        font-weight:600;
+    }
+    .detail{
+        font-family:'Copperplate Gothic';
+    }
+</style>
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3 style="font-family:'Copperplate Gothic'">Details</h3>
+@{
+    PostTable post =  ViewBag.PostDetails;
+               
+    <p class="title">Name: </p>
+    <p class="detail">@post.UserTable.FirstName @post.UserTable.LastName</p>
+    <p class="title">Title: </p>
+    <p class="detail">@post.Title</p>
+    <p class ="title">Description: </p>
+    <p class="detail">@post.Description</p>
+    <p class="title">Date Added: </p>
+    <p class="detail">@post.PostedDate</p>
+}
+
+@Html.ActionLink("Back to Main menu", "ViewPost")
