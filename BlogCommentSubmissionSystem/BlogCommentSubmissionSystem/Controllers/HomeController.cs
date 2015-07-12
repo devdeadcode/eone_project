@@ -15,6 +15,8 @@ namespace BlogCommentSubmissionSystem.Controllers
         // GET: Home/Starting page
         public ActionResult Index()
         {
+            session.Message = null;
+
             return View();
         }
 

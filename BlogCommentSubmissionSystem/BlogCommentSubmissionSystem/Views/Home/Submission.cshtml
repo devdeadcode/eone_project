@@ -1,10 +1,15 @@
-﻿
+﻿<style>
+    .title{
+        font-family:'Copperplate Gothic';
+        font-weight:600;
+    }
+</style>
 
 @{
     ViewBag.Title = "Submission";
 }
 
-<h3 style="font-family:'Copperplate Gothic'">Enter your comments here</h3>
+<h3 class="title">Enter your comments here</h3>
 
 <form method="post" action="@Url.Action("Authentication", "Home")">
     @{
@@ -12,22 +17,22 @@
         {
             if (ViewBag.ErrorCode == 0)
             {
-                <p style="color:red">@ViewBag.ErrorMessage;</p>
+                <p style="color:red">@ViewBag.ErrorMessage</p>
             }
             else
             {
-                <p style="color:green">@ViewBag.ErrorMessage;</p>
+                <p style="color:green">@ViewBag.ErrorMessage</p>
             }
             
         }
     }
 
-    <p>Email Address:</p>
+    <p class="title">Email Address:</p>
     <p><input name="email" type="text" /></p>
-    <p>Title:</p>
+    <p class="title">Title:</p>
     <p><input name="title" type="text" /></p>
 
-    <p>Description:</p>
+    <p class="title">Description:</p>
     <p><textarea name="desc" rows="2" cols="22"></textarea></p>
     <p><input id="submit" class="myButton" type="submit" value="submit" /></p>
 
