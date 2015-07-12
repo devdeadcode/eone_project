@@ -5,3 +5,24 @@
 
 <h2>ViewPost</h2>
 
+<table>
+    <tr>
+        <th>PostID</th>
+        <th>Email</th>
+        <th>Title</th>
+        <th>Posted Date</th>
+    </tr>
+    @{
+        foreach (PostTable post in ViewBag.Posts)
+        {
+            
+            <tr>
+                <td>@post.PostId</td>
+                <td>@post.UserTable.EmailAddress</td>
+                <td><a href="@Url.Action("Details", "Home")/@post.PostId">@post.Title</td>
+                <td>@post.PostedDate</td>
+            </tr>
+        }
+    }
+</table>
+

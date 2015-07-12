@@ -10,6 +10,7 @@ namespace BlogCommentSubmissionSystem
         {
         static readonly Session _instance = new Session(); //readonly indicates that it can allocate only once
         private string message;
+        private int messageCode;
         public static Session Instance
         {
             get
@@ -22,8 +23,15 @@ namespace BlogCommentSubmissionSystem
         {
             get { return message; }
             set { message = value; }
-            }
+        }
+
+        public int MessageCode
+        {
+            get { return messageCode; }
+            set { messageCode = value; }
+        }
 
         }
+
    
 }
