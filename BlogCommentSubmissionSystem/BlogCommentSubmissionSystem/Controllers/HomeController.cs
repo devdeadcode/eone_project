@@ -75,7 +75,7 @@ namespace BlogCommentSubmissionSystem.Controllers
         {
             var result = (from post in db.PostTables
                           where post.PostId == Id
-                          select post).ToList();
+                          select post).SingleOrDefault();
             ViewBag.PostDetails = result;
             return View();
         }
