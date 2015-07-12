@@ -1,4 +1,13 @@
-﻿
+﻿<style>
+    table, td, th {
+        border: 1px solid black;
+    }
+
+    th {
+        background-color: grey;
+        color: white;
+    }
+</style>
 @{
     ViewBag.Title = "ViewPost";
 }
@@ -7,10 +16,10 @@
 
 <table>
     <tr>
-        <th>PostID</th>
-        <th>Email</th>
-        <th>Title</th>
-        <th>Posted Date</th>
+        <th> ID </th>
+        <th> Email </th>
+        <th> Title </th>
+        <th> Posted Date </th>
     </tr>
     @{
         foreach (PostTable post in ViewBag.Posts)

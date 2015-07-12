@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="PostId" />
     </Key>
-    <Property Name="PostId" Type="Int32" Nullable="false" />
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserId" Type="Int32" Nullable="false" />
     <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
@@ -33,7 +33,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ProjectDatabaseEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ProjectDatabaseEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="PostTables" EntityType="Self.PostTable" />
     <EntitySet Name="UserTables" EntityType="Self.UserTable" />
     <AssociationSet Name="FK_PostTable_ToUserTable" Association="Self.FK_PostTable_ToUserTable">

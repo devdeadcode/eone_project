@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="PostId" />
           </Key>
-          <Property Name="PostId" Type="int" Nullable="false" />
+          <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="Title" Type="varchar" MaxLength="50" />
           <Property Name="Description" Type="varchar" MaxLength="500" />
@@ -53,7 +53,7 @@
           <Key>
             <PropertyRef Name="PostId" />
           </Key>
-          <Property Name="PostId" Type="Int32" Nullable="false" />
+          <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
@@ -82,7 +82,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProjectDatabaseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProjectDatabaseEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PostTables" EntityType="Self.PostTable" />
           <EntitySet Name="UserTables" EntityType="Self.UserTable" />
           <AssociationSet Name="FK_PostTable_ToUserTable" Association="Self.FK_PostTable_ToUserTable">
@@ -95,7 +95,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProjectDatabaseModelStoreContainer" CdmEntityContainer="ProjectDatabaseEntities">
+        <EntityContainerMapping StorageEntityContainer="ProjectDatabaseModelStoreContainer" CdmEntityContainer="ProjectDatabaseEntities1">
           <EntitySetMapping Name="PostTables">
             <EntityTypeMapping TypeName="ProjectDatabaseModel.PostTable">
               <MappingFragment StoreEntitySet="PostTable">

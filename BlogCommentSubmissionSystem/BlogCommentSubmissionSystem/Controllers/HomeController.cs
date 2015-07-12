@@ -8,7 +8,7 @@ namespace BlogCommentSubmissionSystem.Controllers
 {
     public class HomeController : Controller
     {
-        ProjectDatabaseEntities db = new ProjectDatabaseEntities(); //initializes a databbase object
+        ProjectDatabaseEntities1 db = new ProjectDatabaseEntities1(); //initializes a databbase object
         BlogCommentSubmissionSystem.Session session = BlogCommentSubmissionSystem.Session.Instance; 
         //returns the object that was already initialized in the Session class
 
@@ -57,13 +57,13 @@ namespace BlogCommentSubmissionSystem.Controllers
                 post.UserId = check.UserId;
                 db.PostTables.Add(post);
                 db.SaveChanges();
-                session.Message = "Record Added.";
+                session.Message = "Record added. Thank you for your post!";
                 session.MessageCode = 1;
                 
             }
             else
             {
-                session.Message = "Email not found.";
+                session.Message = "Sorry, no authorization!";
                 session.MessageCode = 0;
             }
 

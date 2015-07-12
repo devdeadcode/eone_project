@@ -13,10 +13,10 @@ namespace BlogCommentSubmissionSystem
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProjectDatabaseEntities : DbContext
+    public partial class ProjectDatabaseEntities1 : DbContext
     {
-        public ProjectDatabaseEntities()
-            : base("name=ProjectDatabaseEntities")
+        public ProjectDatabaseEntities1()
+            : base("name=ProjectDatabaseEntities1")
         {
         }
     
